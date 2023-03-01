@@ -102,17 +102,8 @@ export const openClose = async (req, res, next) => {
     if (!zone) return next("zone not found");
     zone.ferme = !zone.ferme;
     await zone.save();
-    const branche = await brancheModel.findById({ _id: zone.branche });
-    const zones = await zoneModel.find({ branche: branche._id });
-    const newObject = {
-      _id: branche._id,
-      label: branche.label,
-      zones: zones,
-    };
-    return res.status(200).json({
-      message: "Zone update successfully",
-      data: newObject,
-    });
+
+    return res.status(200).json(true);
   } catch (error) {
     console.log(error);
     return next(error.message);

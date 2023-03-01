@@ -28,6 +28,7 @@ import entreeMerchandiseRouter from "#routes/entreeMerchandise.routes.js";
 import demondMerchandiseRouter from "#routes/demeondMerchandise.routes.js";
 import outMerchandiseRouter from "#routes/outMerchandise.routes.js";
 import destroyMerchandiseRouter from "./src/routes/destroyMerchandise.routes.js";
+import pointPreparationRouter from "./src/routes/pointPreparation.routes.js";
 //* Setup Environment Variables
 dotenv.config();
 
@@ -75,6 +76,7 @@ app.use("/api", entreeMerchandiseRouter);
 app.use("/api", demondMerchandiseRouter);
 app.use("/api", outMerchandiseRouter);
 app.use("/api", destroyMerchandiseRouter);
+app.use("/api", pointPreparationRouter);
 //app.use("/api", AuthorizationAdminMiddleware);
 app.use("/api", permissionTagsRouter);
 app.use("/api", errorHandler);
